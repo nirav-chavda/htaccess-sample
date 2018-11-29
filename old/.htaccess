@@ -1,0 +1,6 @@
+# password protect a directory
+# user : nirav and pswrd : nirav 
+AuthName "oldy"
+AuthUserFile C:\xampp\htdocs\htaccess\old\.htpasswd
+AuthType Basic
+Require valid-user

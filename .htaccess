@@ -1,0 +1,33 @@
+# redirect to page when error 404 occures 
+ErrorDocument 404 /htaccess/error_pages/404.html
+
+# Redirect to other location
+Redirect /htaccess/old/ /htaccess/index
+
+# Disable index view
+Options -Indexes
+
+# Hide a specific file
+<Files server.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Blocking IP Address
+Order deny,allow
+Deny from 255.0.0.0
+# this IP is missing the 4th set of digits , this means any IP address which matches the firth three set of digits will be blocked
+Deny from 123.45.6.
+Allow from all
+
+RewriteEngine on 
+
+# for .php
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+
+# for .html
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.html -f 
+RewriteRule ^(.*)$ $1.html
