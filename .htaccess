@@ -7,8 +7,15 @@ Redirect /htaccess/old/ /htaccess/index
 # Disable index view
 Options -Indexes
 
+#Alternate default index pages
+DirectoryIndex index.htm index.html index.php
+
 # Hide a specific file
 <Files server.php>
+    Order allow,deny
+    Deny from all
+</Files>
+<Files csrf.class.php>
     Order allow,deny
     Deny from all
 </Files>
