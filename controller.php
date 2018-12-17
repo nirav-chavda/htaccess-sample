@@ -12,6 +12,8 @@
             
             fclose($myfile);
 
+            echo "enter";
+
             header("Location:form");
         
         } else {
@@ -21,6 +23,8 @@
             fwrite($myfile, " Someone tried csrf\n");
             
             fclose($myfile);
+
+            echo "csrf";
 
             header('Location:error_pages/401');
         }
