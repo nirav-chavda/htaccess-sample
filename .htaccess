@@ -1,4 +1,9 @@
+
 # redirect to page when error 404 occures 
+ErrorDocument 404 https://pure-chamber-74730.herokuapp.com/error_pages/404.html 
+ErrorDocument 401 https://pure-chamber-74730.herokuapp.com/error_pages/401.html
+ErrorDocument 403 https://pure-chamber-74730.herokuapp.com/error_pages/403.html
+
 ErrorDocument 404 /htaccess/error_pages/404.html
 ErrorDocument 401 /htaccess/error_pages/401.html
 ErrorDocument 403 /htaccess/error_pages/403.html
