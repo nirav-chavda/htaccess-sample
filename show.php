@@ -1,3 +1,3 @@
 <?php
-    echo basename(__DIR__); 
+    echo basename(__DIR__) . " " . dirname(__FILE__); 
 ?>
