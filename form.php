@@ -36,6 +36,11 @@
             <?php csrf_field() ?>
         </form>
     </div>
+    <br/>
+    <div class="container">
+        <a class="btn btn-danger" href="read-file">Read File</a>
+    </div>
+    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.js"></script>

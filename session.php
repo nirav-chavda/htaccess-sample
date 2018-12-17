@@ -4,6 +4,6 @@
         session_destroy();
     }
 
-    echo $_SESSION['token_id'];
+    //echo $_SESSION['token_id'];
 
 ?>

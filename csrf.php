@@ -2,11 +2,11 @@
         
         function get_token_id() {
 
-                if(isset($_SESSION['token_id'])) { 
-                        return $_SESSION['token_id'];
-                } else {
+                // if(isset($_SESSION['token_id'])) { 
+                //         return $_SESSION['token_id'];
+                // } else {
                         return createToken();
-                }
+                //}
         }
 
         function check_valid($method) {
@@ -17,6 +17,7 @@
                         //if(isset(${$method}[$this->get_token_id()]) && (${$method}[$this->get_token_id()] == $this->get_token())) {
                         if(isset(${$method}['random']) && (${$method}['random'] == $_SESSION['token_id'])) {
                                         return true;
+                                        dropToken();
                                 } else {
                                         return false;   
                                 }
@@ -34,7 +35,7 @@
         }
 
         function createToken() {
-                $token_id = rand(1,50);
+                $token_id = md5(uniqid(rand(),true));
                 $_SESSION['token_id'] = $token_id;
                 return $token_id;
         }    
